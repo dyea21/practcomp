@@ -7,3 +7,11 @@
 - practiced git
 - learned about cloning committing and pushing
 - also some markdown
+
+```
+git status
+git add <filename>
+git commit -m "MESSAGE"
+git push
+```
+
