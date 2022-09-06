@@ -89,4 +89,10 @@ x <- 4^2
 - [x] @mentions , #refs , [links](URL HERE) , **formatting** , and <del>tags</del> support
 - [x] list syntax required (any unordered or ordered list supported)
 
+## TABLES
+
+First Header | Second Header
+------------ | -------------
+Content cell 1 | Content cell 2 |
+Content column 1 | Content column 2
 
