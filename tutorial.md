@@ -50,7 +50,7 @@ Ordered
 
 ## IMAGES
 
-![leaf vine] (https://w7.pngwing.com/pngs/9/319/png-transparent-common-ivy-virginia-creeper-vine-leaf-plant-vines-are-available-for-free-green-vine-plants-free-logo-design-template-photography-branch-thumbnail.png)
+! [leaf vine] (https://w7.pngwing.com/pngs/9/319/png-transparent-common-ivy-virginia-creeper-vine-leaf-plant-vines-are-available-for-free-green-vine-plants-free-logo-design-template-photography-branch-thumbnail.png)
 
 ## LINKS
 
@@ -58,4 +58,26 @@ https://brewerlab.net - automatic
 
 [Brewer Lab] (https://brewerlab.net)
 
+## BACKSLASH ESCAPE
 
+\*Literal asterisks\*
+
+## FENCED CODE BLOCKS
+
+Generic Example:
+
+```
+echo "Hello"
+```
+
+Python example:
+
+```python
+print("Hello")
+```
+
+R Example:
+
+```r
+x <- 4^2
+```
