@@ -27,3 +27,24 @@ _The Way We Were_ by G.A. Parker
 > I pickled him in bright red wine, \
 > And labelled each and every spine. 
 
+## LISTS
+
+Unordered
+* item 1
+* item 2
+	* item 2a
+	* item 2b
+
+Ordered
+1. item 1
+2. item 2
+3. item 3
+	* item 3a
+	* item 3b
+
+## BULLETPOINTS
+
+- point 1
+- point 2
+- point 3
+
