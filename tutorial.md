@@ -18,3 +18,12 @@ __This text will also be bold__
 
 _You **can** combine them_
 
+## BLOCKQUOTES
+
+_The Way We Were_ by G.A. Parker
+
+> A sweet and friendly porcupine, \
+> Snuffled up; his eyes met mine, \
+> I pickled him in bright red wine, \
+> And labelled each and every spine. 
+
