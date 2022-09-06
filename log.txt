@@ -1,0 +1,105 @@
+    1  mkdir praccomp
+    2  cd praccomp/
+    3  ls
+    4  cd
+    5  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    6  bash Miniconda3-latest-Linux-x86_64.sh
+    7  exit
+    8  pwd
+    9  ls/home
+   10  ls /home
+   11  pwd
+   12  cd /home/ecubio/Downloads
+   13  ls /home
+   14  pwd
+   15  cd /home
+   16  cd /home/dyea21
+   17  pwd
+   18  cd Downloads
+   19  cd Downloads/
+   20  cd /home
+   21  pwd
+   22  cd downloads/
+   23  ls
+   24  mkdir praccomp
+   25  ls
+   26  mkdir praccomp
+   27  mkdir practcomp
+   28  mkdir praccomp
+   29  cd /praccomp
+   30  mkdir praccomp
+   31  mkdir praccomp$
+   32  clear
+   33  echo $user
+   34  var='echo "Hello"
+   35  echo$var
+   36  clear
+   37  home
+   38  dyea21@ecubio
+   39   /home
+   40  '
+   41  clear
+   42  ld
+   43  clear
+   44  mkdir praccomp
+   45  clear
+   46  mkdir blah
+   47  cd
+   48  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+   49  mkdir praccomp
+   50  mkdir blah
+   51  ls
+   52  rm Miniconda3-latest-Linux-x86_64.sh.1
+   53  ls
+   54  rmdir blah/
+   55  ls
+   56  git clone https://github.com/dyea21/practcomp.git
+   57  ls
+   58  cd practcomp/
+   59  ls
+   60  git status
+   61  ls -la
+   62  nano README.md
+   63  git status
+   64  git add
+   65  git add README.md
+   66  git status
+   67  git commit -m "added readme"
+   68  git config --global dye.ashley2016@gmail.com
+   69  git config --global dyea21
+   70  git config --global user.email dye.ashley2016@gmail.com
+   71  git config --global user.name dyea21
+   72  git status
+   73  git commit -m "added readme"
+   74  git status
+   75  git push
+   76  nano README.md
+   77  git status
+   78  git commit -a -m "corrected typos"
+   79  git staus
+   80  git status
+   81  git history
+   82  git --help
+   83  git status
+   84  git push
+   85  nano README.md 
+   86  git commit -a -m "added git commands"
+   87  git push
+   88  mkdir test
+   89  ls
+   90  git status
+   91  touch test/test.txt
+   92  git status
+   93  rmdir test/
+   94  rm -r test/
+   95  git status
+   96  conda install mamba -c conda-forge
+   97  mamba install htop -c conda-forge
+   98  htop
+   99  cd
+  100  ssh ecubio@localhost
+  101  htop
+  102  cd practcomp/
+  103  ls
+  104  history
+  105  history > log.txt
