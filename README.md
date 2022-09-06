@@ -1,9 +1,9 @@
-# practicalcomputing
+# Practical Computing BIOL 6220
 
-## ashley
+## Ashley Dye
 
 ### 20220901
 
 - practiced git
 - learned about cloning committing and pushing
-- also some mark down
+- also some markdown
