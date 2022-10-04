@@ -1,0 +1,133 @@
+---
+title: "BIOL4800/6220_Fall2022_RTutorial"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+  pdf_document: default
+---
+
+# R Basic
+
+## Introduction
+
+### R as a calculator
+
+```{r}
+1 + 100
+```
+```{r}
+2^2
+```
+```{r}
+7/2
+```
+```{r}
+4-1
+```
+```{r}
+2*2
+```
+```{r}
+3+5*2
+```
+```{r}
+(3+5)*2
+```
+```{r}
+2e2
+```
+```{r}
+2/100000
+```
+```{r}
+sin(1)
+```
+```{r}
+log(1)
+```
+```{r}
+exp(0)
+```
+```{r}
+1 == 1
+```
+```{r}
+1 >=1
+```
+```{r}
+1 < 1
+```
+```{r}
+1 != 2
+```
+```{r}
+x <- 10
+x
+```
+```{r}
+x + x
+```
+```{r}
+x -5
+```
+```{r}
+x^2
+```
+```{r}
+y <- x + x
+y
+```
+### Vectorization
+
+```{r}
+1:5
+```
+```{r}
+2^(1:5)
+```
+```{r}
+v <-1:5
+v
+```
+```{r}
+log(v)
+```
+
+### Environment
+
+```{r}
+ls()
+```
+```{r}
+rm(x)
+```
+```{r}
+ls()
+```
+
+## Package Management
+```{r}
+installed.packages()
+```
+```{r}
+#install.packages("vegan", dependencies=TRUE)
+```
+```{r}
+#library(vegan)
+```
+```{r}
+#remove.packages("vegan")
+```
+```{r}
+#library(vegan)
+```
+
+## Project Management
+
+1. Set up management structure (i.e. "data", "src", "results", "doc")
+2. Discuss avoiding redundancy of files
+3. Make sure to use version control (i.e. Git)
+
+## Getting Help
+
