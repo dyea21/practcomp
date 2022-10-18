@@ -1,10 +1,10 @@
 ---
 title: "BIOL4800/6220_Fall2022_RTutorial"
 output:
-  pdf_document: default
-  html_notebook: default
   html_document:
     df_print: paged
+  html_notebook: default
+  pdf_document: default
 ---
 
 # R Basic
@@ -163,10 +163,10 @@ cats
 getwd()
 ```
 ```{r}
-write.csv(cats, file = "./data/cats.csv")
+#write.csv(cats, file = "./data/cats.csv")
 ```
 ```{r}
-read.csv("./data/cats.csv")
+#read.csv("./data/cats.csv")
 ```
 ```{r}
 cats$coat
@@ -444,6 +444,122 @@ f2[f2 == "a"]
 ```{r}
 f2[f2 %in% c('a','c')] # f2 %in% searching in f2
 ```
+
+### Matrices Revisited
+
+```{r}
+set.seed(65) #makes matrix reproduceably random
+m <- matrix(rnorm(6*4), ncol=4, nrow=6)
+m
+```
+```{r}
+m[3:4, c(3,1)]
+```
+```{r}
+m[,c(3,4)]
+```
+
+### Lists Revisted
+
+```{r}
+xlist <- list(a="BIOL48006220", b=seq(1,10, by = 0.5), data="Grades")
+xlist
+```
+```{r}
+xlist[1:2]
+```
+```{r}
+xlist['a']
+```
+```{r}
+xlist[['a']] #only values of a
+```
+```{r}
+xlist['b']
+xlist[['b']]
+```
+```{r}
+xlist$b #name$ returns only the values
+```
+
+### Data Frames Revisited
+
+```{r}
+gp <- read.csv('~/OneDrive - East Carolina University/biol48006200_Fall2022/data/forest_area_sq_km.csv') #use tab to find path
+head(gp, n=10L) #10 lines L=lines
+```
+```{r}
+head(gp[3], n=10L)
+```
+```{r}
+nrow(gp)
+```
+```{r}
+ncol(gp)
+```
+```{r}
+head(gp[["country"]], 10L) #head=header
+```
+```{r}
+gp$X1998 #$ pulls up all headers
+```
+```{r}
+gp[1:3, 2:5] #rows
+```
+```{r}
+gp[c(1:3), c(2:5)] #columns
+```
+```{r}
+gp[ which(gp$X1989 <= 100 & gp$X2019 >= 100),] #returns countries that had forest area of less than 100 in 1989 and more than 100 in 2019 (messed up from the millions)
+```
+
+### Conditionals and Flow
+```{r}
+n <- 10
+
+if (n < 10) {
+  print("n is less than 10")
+} else if (n > 10) {
+  print("n is greater than 10")
+} else {
+  print("n is equal to 10")
+}
+```
+```{r}
+for (n in seq(0,20)) {
+  if (n < 10) {
+    print("n is less than 10")
+  } else if (n > 10) {
+   print("n is greater than 10")
+  } else {
+    print("n is equal to 10")
+  }
+} #for loops in R with conditionals
+```
+```{r}
+g <- 0
+while (g <= 10) {
+  print(paste(g,"is less than or equal to 10"))
+  g <- g+1
+} #While statement stops when g is no longer less than or equal to 10 (only returns WHILE g is less than or equal to 10)
+```
+
+## Plotting and Figures
+
+```{r}
+#install.packages("ggplot2")
+```
+```{r}
+library(ggplot2)
+```
+```{r}
+forestdata <- read.csv('~/OneDrive - East Carolina University/biol48006200_Fall2022/data/forest_area_sq_km.csv')
+head(forestdata)
+```
+```{r}
+#ggplot(data=forestdata, mapping=aes(x=X1989, y=X2019)) + geom_point()
+```
+
 
 
 
