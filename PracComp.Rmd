@@ -1,10 +1,10 @@
 ---
 title: "BIOL4800/6220_Fall2022_RTutorial"
 output:
+  pdf_document: default
+  html_notebook: default
   html_document:
     df_print: paged
-  html_notebook: default
-  pdf_document: default
 ---
 
 # R Basic
@@ -227,7 +227,7 @@ typeof(cats)
 class(cats)
 ```
 ```{r}
-file.show("./data/cats.csv")
+#file.show("./data/cats.csv")
 ```
 
 ```{r}
@@ -570,10 +570,10 @@ head(gp)
 ```
 ```{r}
 #library(ggplot2)
-ggplot(data=gp, mapping=aes(x=gdpPercap_1952, y=pop_1952)) + geom_point()
+#ggplot(data=gp, mapping=aes(x=gdpPercap_1952, y=pop_1952)) + geom_point()
 ```
 ```{r}
-ggplot(data=gp, mapping=aes(x=gdpPercap_2002, y=pop_2002)) + geom_point()
+#ggplot(data=gp, mapping=aes(x=gdpPercap_2002, y=pop_2002)) + geom_point()
 ```
 ```{r}
 gapminder <- read.csv("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv")
@@ -650,3 +650,195 @@ write.table(gapminder, file="data/gapminder_web.csv", sep=",")
 write.csv(africas, file="data/gapminder_web_africas.csv")
 ```
 
+### Fancy Plots
+```{r}
+#install.packages(c("ggridges", "viridis", "hrbrthemes"), dependencies = T)
+```
+```{r}
+library(ggridges)
+library(ggplot2)
+library(viridis)
+library(hrbrthemes)
+
+#ggplot(lincoln_weather, aes(x='Mean Temperature [F]', y='Month', fill=..x..)) +
+ # geom_density_ridges_gradient(scale=3, rel_min_height=0.01) +
+  #scale_fill_viridis(name= 'Temp [F]', option="C") +
+  
+```
+
+```{r}
+#install.packages(c("ggstatsplot", "palmerpenguins", "tidyverse"), dependencies = T)
+library(ggstatsplot)
+library(tidyverse)
+```
+
+```{r}
+gapminder2 <- drop_na(gapminder)
+gapminder2
+```
+```{r}
+#install.packages("vioplot", dependencies = T)
+```
+
+```{r}
+library(vioplot)
+with(gapminder2, vioplot(
+  lifeExp~continent, col="blue"
+))
+```
+## Statistics
+
+### Additional ways of importing/reading data
+
+```{r}
+rand <- c(12, 54, 98, 65, 38)
+rand
+```
+```{r}
+sum(rand)
+length(rand)
+avg.rand <- sum(rand)/length(rand)
+avg.rand
+```
+```{r}
+mean(rand)
+```
+```{r}
+sort(rand)
+```
+```{r}
+min(rand)
+max(rand)
+```
+```{r}
+cumsum(rand)
+```
+```{r}
+diff(rand)
+```
+```{r}
+rand[2]
+rand[3:4]
+```
+```{r}
+rand*2
+```
+
+### Analyses
+
+#### Univariate Statistics
+
+1. Categorical Data
+  a. Barplots
+
+```{r}
+beer <- c(3,4,1,1,3,4,3,3,1,3,2,1,2,1,2,3,2,3,1,1,1,1,4,3,1)
+length(beer)
+```
+
+```{r}
+table(beer)
+```
+
+```{r}
+#barplot((table(beer), xlab="Beer", ylab="Frequency")
+```
+
+```{r}
+barplot(table(beer)/length(beer), xlab="Beer", ylab="Proportion") #proportions insteaad of frequencies
+```
+
+  b. Pie Charts
+```{r}
+pie(table(beer), main="Beer preference by students")
+```
+```{r}
+pedes <- c(1,2,3,52,2,4,35,45,23,34,6,4,64,23,12,14,17,34)
+```
+
+2. Numerical Data
+  a. Stem-and-leaf plots
+```{r}
+stem(pedes)
+```
+  b. Strip Chart
+```{r}
+stripchart(pedes, method="stacks")
+```
+3. Measures of Center
+  a. Mean
+```{r}
+mean(pedes)
+```
+```{r}
+mean(gapminder$lifeExp)
+```
+
+  b. Median
+```{r}
+median(pedes)
+```
+```{r}
+median(gapminder$lifeExp)
+```
+```{r}
+with(gapminder, median(lifeExp))
+```
+
+  c. Mode
+```{r}
+which(table(pedes) == max(table(pedes)))
+```
+
+4. Variation
+  a. Range
+```{r}
+range(pedes)
+```
+```{r}
+diff(range(pedes)) #summary of range
+```
+  b. Variance
+```{r}
+var(pedes)
+```
+```{r}
+sd(pedes)
+```
+  c. IQRs interquartile range
+```{r}
+IQR(pedes)
+```
+  d. Z-scores
+```{r}
+scale(pedes)
+```
+  e. Summary
+```{r}
+summary(pedes)
+```
+5. Plot
+  a. Histograms
+```{r}
+hist(pedes, breaks="scott") #scott finds optimal number of bins
+```
+```{r}
+hist(pedes, breaks="scott", prob=TRUE)
+lines(density(pedes)) #shows probabilites instead of proportions
+```
+  b. Box Plots
+```{r}
+boxplot(pedes)
+```
+```{r}
+summary(boxplot(pedes))
+```
+
+#### Bivariate and Multivariate Statistics
+1. Plotting and Regression
+  a. Box Plotting
+```{r}
+
+```
+
+  
