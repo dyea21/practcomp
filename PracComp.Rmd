@@ -1,10 +1,10 @@
 ---
 title: "BIOL4800/6220_Fall2022_RTutorial"
 output:
-  pdf_document: default
-  html_notebook: default
   html_document:
     df_print: paged
+  html_notebook: default
+  pdf_document: default
 ---
 
 # R Basic
@@ -763,7 +763,7 @@ stem(pedes)
 ```
   b. Strip Chart
 ```{r}
-stripchart(pedes, method="stacks")
+#stripchart(pedes, method="stacks")
 ```
 3. Measures of Center
   a. Mean
@@ -838,7 +838,78 @@ summary(boxplot(pedes))
 1. Plotting and Regression
   a. Box Plotting
 ```{r}
-
+spid.gen <- read.csv('~/OneDrive - East Carolina University/biol48006200_Fall2022/data/spider_genitalia (1).csv', header=T)
+spid.gen
+```
+```{r}
+boxplot(spid.gen$left.bulb/spid.gen$carapace.length ~ spid.gen$habitat)
 ```
 
+  b. Scatter Plotting
+```{r}
+plot(spid.gen$left.bulb ~ spid.gen$right.bulb)
+```
+  c. 
+```{r}
+spid.reg  <- lm(spid.gen$left.bulb~spid.gen$right.bulb)
+```
   
+```{r}
+summary(spid.reg)
+```
+
+```{r}
+#plot(spid.gen$left.bulb ~ spid.gen$right.bulb, pch=as.character(spid.gen$habitat))
+#abline(spid.reg)
+```
+  d. Correlation Coefficients and Spearman Rank Correlation
+```{r}
+cor.gen <- with(spid.gen, cor(left.bulb, right.bulb))
+cor.gen^2 #correlation coefficient, r-squared value
+```
+```{r}
+spearman.cor.gen <- with(spid.gen, cor(left.bulb, right.bulb, method="spearman"))
+spearman.cor.gen^2 #correlation coefficient, r-squared value
+```
+  e. Residuals
+```{r}
+residuals(spid.reg)
+```
+
+  f. Transformations
+```{r}
+plot(log10(spid.gen$left.bulb)~spid.gen$right.bulb)
+# log.left.ball <- log10(spid.gen$left.bulb)
+```
+2. Comparing Discrete Treamtnet Effects
+  a. Chi-Squared
+```{r}
+obs_weighted <- c(4, 15, 6, 15, 18, 2)
+obs_fair <- c(10, 10, 10, 10, 10, 10)
+exp <- c(.16, .17, .16, .17, .17, .17)
+chisq.test(obs_weighted, p=exp)
+chisq.test(obs_fair, p=exp)
+```
+  b. T-tests
+```{r}
+#H0 - true mean is equal to 0, but you can set true mean to other values with mu=
+t.test(spid.gen$carapace.length)
+
+mean(spid.gen$carapace.length)
+
+t.test(spid.gen$carapace.length, mu=29)
+```
+```{r}
+#two sample t-test
+habitat.t2 <- t.test(spid.gen$left.bulb ~ spid.gen$habitat)
+habitat.t2
+```
+```{r}
+habitat.tless <- t.test(spid.gen$left.bulb, alternative = "less")
+habitat.tless
+```
+```{r}
+habitat.tgreater <- t.test(spid.gen$left.bulb, alternative = "greater")
+habitat.tgreater
+```
+
